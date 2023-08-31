@@ -136,8 +136,8 @@ class XeggeXClient():
             self.auth = Auth(settings['access_key'], settings['secret_key'])
         except (FileNotFoundError, KeyError) as ex:
             self.auth = None
-        self.endpoint = "https://xeggex.com/api/v2"
-        self.ws_endpoint = 'wss://ws.xeggex.com'
+        self.endpoint = "https://api.xeggex.com/api/v2"
+        self.ws_endpoint = 'wss://api.xeggex.com'
         self.ws_responses = defaultdict(Queue)
         self.session = aiohttp.ClientSession()
         self.sending_event = asyncio.Event()
