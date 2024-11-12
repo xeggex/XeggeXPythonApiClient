@@ -786,7 +786,7 @@ class XeggeXClient():
             "ticker": ticker,
             "quantity": quantity,
             "address": address,
-            "paymentId": payment_id
+            "paymentid": payment_id
         }
         pop_none(data)
         return self.post(path, data)
