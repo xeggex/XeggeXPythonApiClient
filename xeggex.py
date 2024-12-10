@@ -673,6 +673,20 @@ class XeggeXClient():
         """
         path = f'/market/getorderbookbymarketid/{market_id}'
         return await self.get(path)
+    
+    async def get_tickers(self):
+        """Get market related statistics for all markets for the last 24 hours."""
+        path = f'/tickers'
+        return await self.get(path)
+
+    async def get_ticker_by_symbol(self, symbol):
+        """Get market related statistics for single market for the last 24 hours.
+        
+        Args:
+            symbol: Market symbol, two tickers joined with a \"_\" - for example \"XRG_LTC\".
+        """
+        path = f'/ticker/{symbol}'
+        return await self.get(path)
 
 # Private methods
 
